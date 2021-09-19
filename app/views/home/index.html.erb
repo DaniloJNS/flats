@@ -1,2 +1,16 @@
 <h1>Flats</h1>
 <h3>Boas vindas ao sistema de locação de apartamentos</h3>
+<% if @property.empty? %>
+  <p>Nenhum imóvel disponível</p>
+<% else %> 
+  <%@property.each do |p|%>
+    <p>
+      <%=link_to p.title, propety_path(p)%>
+    </p>
+    <p>
+      <%=p.description%>
+    </p>
+    <p>
+      Quartos: <%=p.rooms%>
+  <% end %>
+<% end %>

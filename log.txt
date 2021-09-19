@@ -1,0 +1,16 @@
+[1G▽[6n[1G[K[6n[1Girb(main):001:0> [K[1G[18G[1Girb(main):001:0> P[K[1G[19G[1Girb(main):001:0> Pr[K[1G[20G[1Girb(main):001:0> Pro[K[1G[21G[1Girb(main):001:0> Prop[K[1G[22G[1Girb(main):001:0> Prope[K[1G[23G[1Girb(main):001:0> Propet[K[1G[24G[1Girb(main):001:0> PropetyLoading development environment (Rails 6.1.4.1)
+[K[1G[25G[1Girb(main):001:0* Propety.[K[1G[26G[1Girb(main):001:0* Propety.a[K[1G[27G[1Girb(main):001:0* Propety.al[K[1G[28G[1Girb(main):001:0> Propety.all[K[1G[29G[1G[1Girb(main):001:0> Propety.all[K[1G[29G[1Girb(main):001:0> Propety.all(irb):1:in `<main>': [1muninitialized constant Propety ([1;4mNameError[m[1m)[m
+[1mDid you mean?  Property[m
+[K[1G[1G[1S[1G[K[1G[6n[1Girb(main):002:0> [K[1G[18G[1G[1Girb(main):002:0> Propety.all[K[1G[29G[28G[27G[26G[25G[24G[23G[22G[1G[1Girb(main):002:0> quit[K[1G[22G[22G[1Girb(main):002:0> qui[K[1G[21G[1Girb(main):002:0> qu[K[1G[20G[1Girb(main):002:0> q[K[1G[19G[1Girb(main):002:0> [K[1G[18G[18G[18G[18G[18G[1Girb(main):002:0> a[K[1G[19G[1Girb(main):002:0> [K[1G[18G[18G[1Girb(main):002:0> p[K[1G[19G[1Girb(main):002:0> pr[K[1G[20G[1Girb(main):002:0> pro[K[1G[21G[1Girb(main):002:0> pr[K[1G[20G[1Girb(main):002:0> p[K[1G[19G[1Girb(main):002:0> [K[1G[18G[1Girb(main):002:0> P[K[1G[19G[1Girb(main):002:0> Pr[K[1G[20G[1Girb(main):002:0> Pro[K[1G[21G[1Girb(main):002:0> Prop[K[1G[22G[1Girb(main):002:0> Prope[K[1G[23G[1Girb(main):002:0> Proper[K[1G[24G[1Girb(main):002:0> Propert[K[1G[25G[1Girb(main):002:0> Property[K[1G[26G[1Girb(main):002:0* Property.[K[1G[27G[1Girb(main):002:0* Property.a[K[1G[28G[1Girb(main):002:0> Property.al[K[1G[29G[1Girb(main):002:0> Property.all[K[1G[30G[1G[1Girb(main):002:0> Property.all[K[1G[30G[1Girb(main):002:0> Property.all=> 
+[#<Property:0x000055bc2e73c040
+  id: 2,
+  title: "casa",
+  description: nil,
+  rooms: nil,
+  created_at: Sat, 18 Sep 2021 20:30:13.406454000 UTC +00:00,
+  updated_at: Sat, 18 Sep 2021 20:30:13.406454000 UTC +00:00,
+  parking_slot: nil,
+  bathrooms: nil,
+  pets: nil,
+  daily_rate: nil>]
+[K[1G[1G[1S[1G[K[1G[6n[1Girb(main):003:0> [K[1G[18G[1Girb(main):003:0> q[K[1G[19G[1Girb(main):003:0> qu[K[1G[20G[1Girb(main):003:0> qui[K[1G[21G[1Girb(main):003:0> quit[K[1G[22G[1G[1Girb(main):003:0> quit[K[1G[22G[1Girb(main):003:0> quit[K[1G[1G[1S[1G[K[1G

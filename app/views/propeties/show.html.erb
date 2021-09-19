@@ -1,0 +1,22 @@
+    <p>
+      <%= @property.title%>
+    </p>
+    <p>
+      <%=@property.description%>
+    </p>
+    <p>
+      Quartos: <%=@property.rooms%>
+    </p>
+    <p>
+      Banheiros: <%=@property.bathrooms%>
+    </p>
+    <p>
+      Aceita Pets: <%= @property.pets == true ? "Sim" : "Não"%>
+    </p>
+    <p>
+      Estacionamento: <%=@property.parking_slot == true ? "Sim" : "Não"%>
+    </p>
+    <p>
+      Diária: R$ <%=@property.daily_rate%>
+    </p>
+
