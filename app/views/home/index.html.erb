@@ -1,7 +1,7 @@
 <h1>Flats</h1>
 <h3>Boas vindas ao sistema de locação de apartamentos</h3>
 <% if @property.empty? %>
-  <p>Nenhum imóvel disponível</p>
+  <div><span>Nenhum imóvel disponível</span></div>
 <% else %> 
   <%@property.each do |p|%>
     <p>
