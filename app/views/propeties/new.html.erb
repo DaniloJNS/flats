@@ -1,0 +1,18 @@
+<%= form_with model: @property, url: propeties_path do |p| %>
+    <%= p.label :title, "Título" %>
+    <%= p.text_field :title %>
+    <%= p.label :description, "Descrição" %>
+    <%= p.text_field :description %>
+     <%= p.label :rooms, "Quartos" %>
+    <%= p.number_field :rooms %>
+    <%= p.label :bathrooms, "Banheiros" %>
+   <%= p.number_field :bathrooms %>
+    <%= p.label :daily_rate, "Diária" %>
+    <%= p.number_field :daily_rate %>
+     <%= p.label :pets, "Aceita Pets" %>
+    <%= p.check_box :pets %>
+     <%= p.label :parking_slot, "Vaga de Estacionamento" %>
+     <%= p.check_box :parking_slot %>
+     <%= p.submit "Enviar"%>
+     
+<% end %>

@@ -4,13 +4,16 @@
   <div><span>Nenhum imóvel disponível</span></div>
 <% else %> 
   <%@property.each do |p|%>
-    <p>
-      <%=link_to p.title, propety_path(p)%>
-    </p>
-    <p>
-      <%=p.description%>
-    </p>
+      <%=content_tag :h3, link_to(p.title, propety_path(p))%>
+      <%=content_tag :p, p.description%>
     <p>
       Quartos: <%=p.rooms%>
+    </p>
   <% end %>
 <% end %>
+
+
+<%= link_to 'Cadastrar Imóvel', new_propety_path%>
+
+<%= link_to "Cadastrar Tipo de Imóvel", new_property_type_path %>
+
