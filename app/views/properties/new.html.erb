@@ -1,0 +1,52 @@
+<h1>Cadastro de Imóveis</h1>
+
+<% if @property.errors.any? %>
+   <ul>
+      <% @property.errors.full_messages.each do |error| %>
+         <li><%= error %></li>
+      <% end %>
+   </ul>
+<% end %>
+<%= form_with model: @property do |p| %>
+      <div>
+         <%= p.label :title, "Título" %>
+            <%= p.text_field :title %>
+      </div>
+
+      <div>
+         <%= p.label :description, "Descrição" %>
+            <%= p.text_field :description %>
+      </div>
+
+      <div>
+         <%= p.label :rooms, "Quartos" %>
+            <%= p.number_field :rooms %>
+      </div>
+      <div>
+         <%= p.label :bathrooms, "Banheiros" %>
+            <%= p.number_field :bathrooms %>
+      </div>
+
+      <div>
+         <%= p.label :daily_rate, "Diária" %>
+            <%= p.number_field :daily_rate %>
+      </div>
+
+      <div>
+         <%= p.label :pets, "Aceita Pets" %>
+            <%= p.check_box :pets %>
+      </div>
+
+      <div>
+         <%= p.label :parking_slot, "Vaga de Estacionamento" %>
+            <%= p.check_box :parking_slot %>
+      </div>
+      <div>
+         <%= p.label :property_type_id, "Tipo" %>
+            <%= p.collection_select :property_type_id, PropertyType.all, :id,:name%>
+      </div>
+      <div>
+         <%= p.submit "Enviar"%>
+      </div>
+     
+<% end %>

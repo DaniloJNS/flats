@@ -17,7 +17,6 @@ describe "Visitor register type_register" do
      visit root_path
     click_on "Cadastrar Tipo de Imóvel"
     
-    fill_in "Nome", with: ""
     click_on "Enviar"
 
     expect(page).to have_text("Cadastro ínvalido")
