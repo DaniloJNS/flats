@@ -1,6 +1,7 @@
-<p>
-  <%= @property_type.name %>
-</p>
-<p>
-<%= link_to "Voltar", root_path %>
-</p>
+<h1>Moveis do tipo <%= @property_type.name %></h1>
+
+<h2>Imóveis disponíveis</h2>
+
+<% @property_type.properties.each do |p| %>
+  <%= link_to p.title, property_path(p) %>
+<% end %>

@@ -1,17 +1,39 @@
-<h1>Flats</h1>
-<h3>Boas vindas ao sistema de locação de apartamentos</h3>
-<% if @property.empty? %>
-  <div><span>Nenhum imóvel disponível</span></div>
-<% else %> 
-  <%@property.each do |p|%>
-      <%=content_tag :h3, link_to(p.title, property_path(p))%>
-      <%=content_tag :p, p.description%>
-      <%=content_tag :p, p.rooms%>
+<header>
+  <h1>Flats</h1>
+  <h3>Boas vindas ao sistema de locação de apartamentos</h3>
+<div>
+    <nav>
+      <%= link_to 'Cadastrar Imóvel', new_property_path%>
+    </nav>
+    <nav>
+      <%= link_to "Cadastrar Tipo de Imóvel", new_property_type_path %>
+    </nav>
+    <nav>
+      <%= link_to "Cadastrar Nova Localização", new_property_location_path %>
+    </nav>
+  </div>
+</header>
+
+<aside>
+  <h2>Filtrar por tipo:</h2>
+  <nav>
+    <% @property_types.each do |pt| %>
+      <p>
+        <%= link_to pt.name, property_type_path(pt.id) %>
+      </p>
+      <% end %>
+  </nav>
+</aside>
+<section>
+  <h2>Imoveis Disponíveis</h2>
+  <% if @property.empty? %>
+    <div><span>Nenhum imóvel disponível</span></div>
   <% end %>
-<% end %>
+  <%@property.each do |p|%>
+    <%=content_tag :h3, link_to(p.title, property_path(p))%>
+    <%=content_tag :p, p.description%>
+    <%=content_tag :p, "Quartos: "+ p.rooms.to_s%>
+  <% end %>
 
-<%= link_to 'Cadastrar Imóvel', new_property_path%>
-
-<%= link_to "Cadastrar Tipo de Imóvel", new_property_type_path %>
-
-<%= link_to "Cadastrar Nova Localização", new_property_location_path %>
+  
+</section>
