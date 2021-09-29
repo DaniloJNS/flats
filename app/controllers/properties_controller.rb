@@ -17,6 +17,6 @@ class PropertiesController < ApplicationController
 
   def property_params
     params.require(:property).permit(:title, :description, :rooms, :parking_slot,
-                                 :bathrooms, :pets, :daily_rate, :property_type_id)
+                                 :bathrooms, :pets, :daily_rate, :property_type_id, :property_location_id)
   end
 end

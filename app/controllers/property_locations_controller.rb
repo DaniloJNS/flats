@@ -9,7 +9,7 @@ class PropertyLocationsController < ApplicationController
 
     
     if @property_location.save
-      redirect_to property_location_path(@property_location)
+      redirect_to root_path
     else
       render :new
       redirect_to

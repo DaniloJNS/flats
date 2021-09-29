@@ -46,6 +46,10 @@
             <%= p.collection_select :property_type_id, PropertyType.all, :id,:name%>
       </div>
       <div>
+         <%= p.label :property_location_id, "Região" %>
+            <%= p.collection_select :property_location_id, PropertyLocation.all, :id,:name%>
+      </div>
+      <div>
          <%= p.submit "Enviar"%>
       </div>
      

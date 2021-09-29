@@ -3,17 +3,21 @@ require 'rails_helper'
 describe 'Visitor visit homepage' do
   it 'and view properties' do
     #Arrange => Preparar (os dados)
-    property_type = PropertyType.create!(name: 'Casa')
+    casa = PropertyType.create!(name: 'Casa')
+    apartamento = PropertyType.create!(name: 'Apartamento')
+
+    rio_de_janeiro = PropertyLocation.create!(name:"Rio de janeiro")
+    manaus = PropertyLocation.create!(name:"Manaus")
     Property.create!({ title: 'Casa com quintal em Copacabana', 
                       description: 'Excelente casa, recém reformada com 2 vagas de garagem',
-                      rooms: 3, parking_slot: true, bathrooms: 2, daily_rate: 150,
-                      property_type: property_type
+                      rooms: 3, parking_slot: true, bathrooms: 2, daily_rate: 500, pets: true,
+                      property_type: casa, property_location: rio_de_janeiro
                     })
 
     Property.create!({ title: 'Cobertura em Manaus', 
                       description: 'Cobertura de 300m2, churrasqueira e sauna privativa',
                       rooms: 5, parking_slot: false, bathrooms: 2, daily_rate: 150,
-                      property_type: property_type
+                      property_type: apartamento, property_location: manaus
                     })
 
     #Act => Agir (executar a funcionalidade)
@@ -40,19 +44,24 @@ describe 'Visitor visit homepage' do
 
   it 'and view property details' do
     #Arrange => Preparar (os dados)
-    property_type = PropertyType.create!(name: 'Casa')
-    property = Property.create!({ title: 'Casa com quintal em Copacabana', 
+    casa = PropertyType.create!(name: 'Casa')
+    apartamento = PropertyType.create!(name: 'Apartamento')
+
+    rio_de_janeiro = PropertyLocation.create!(name:"Rio de Janeiro")
+    manaus = PropertyLocation.create!(name:"Manaus")
+
+    Property.create!({ title: 'Casa com quintal em Copacabana', 
                       description: 'Excelente casa, recém reformada com 2 vagas de garagem',
-                      rooms: 3, parking_slot: true, bathrooms: 2, pets: true, daily_rate: 500,
-                      property_type: property_type
+                      rooms: 3, parking_slot: true, bathrooms: 2, daily_rate: 500, pets: true,
+                      property_type: casa, property_location: rio_de_janeiro
                     })
-    
 
     Property.create!({ title: 'Cobertura em Manaus', 
-                    description: 'Cobertura de 300m2, churrasqueira e sauna privativa',
-                    rooms: 5, parking_slot: false, bathrooms: 3, pets: false, daily_rate: 400,
-                    property_type: property_type
-                  })
+                      description: 'Cobertura de 300m2, churrasqueira e sauna privativa',
+                      rooms: 5, parking_slot: false, bathrooms: 2, daily_rate: 150,
+                      property_type: apartamento, property_location: manaus
+                    })
+
 
     #Act => Agir (executar a funcionalidade)
     visit root_path
@@ -68,20 +77,28 @@ describe 'Visitor visit homepage' do
     expect(page).to have_content("Estacionamento: Sim")
     expect(page).to have_content("Diária: R$ 500,00")
     expect(page).to have_content("Tipo: Casa")
+    expect(page).to have_content("Região: Rio de Janeiro")
   end
 
   it 'and view property details and return to home page' do
-    property_type = PropertyType.create!(name: 'Casa')
-    property = Property.create!({ title: 'Casa com quintal em Copacabana', 
-                                 description: 'Excelente casa, recém reformada com 2 vagas de garagem',
-                                 rooms: 3, parking_slot: true, bathrooms: 2, pets: true, daily_rate: 500,
-                                 property_type: property_type
-                               })
+    casa = PropertyType.create!(name: 'Casa')
+    apartamento = PropertyType.create!(name: 'Apartamento')
+
+    rio_de_janeiro = PropertyLocation.create!(name:"Rio de Janeiro")
+    manaus = PropertyLocation.create!(name:"Manaus")
+
+    Property.create!({ title: 'Casa com quintal em Copacabana', 
+                      description: 'Excelente casa, recém reformada com 2 vagas de garagem',
+                      rooms: 3, parking_slot: true, bathrooms: 2, daily_rate: 150,
+                      property_type: casa, property_location: rio_de_janeiro
+                    })
+
     Property.create!({ title: 'Cobertura em Manaus', 
                       description: 'Cobertura de 300m2, churrasqueira e sauna privativa',
-                      rooms: 5, parking_slot: false, bathrooms: 1, pets: false, 
-                      daily_rate: 400, property_type: property_type
+                      rooms: 5, parking_slot: false, bathrooms: 2, daily_rate: 150,
+                      property_type: apartamento, property_location: manaus
                     })
+
     #Act => Agir (executar a funcionalidade)
     visit root_path
     click_on 'Casa com quintal em Copacabana'

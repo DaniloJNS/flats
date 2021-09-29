@@ -16,7 +16,7 @@ class PropertyTypesController < ApplicationController
     @property_type = PropertyType.new(@property_type_params)
 
     if @property_type.save
-      return redirect_to property_type_path(@property_type)
+      return redirect_to root_path
     else
       flash.now[:error] = "Cadastro ínvalido"
       return render action: "falied"
