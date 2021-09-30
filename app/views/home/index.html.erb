@@ -29,7 +29,7 @@
   <nav>
     <% @property_locations.each do |pl| %>
       <p>
-        <%= link_to pl.name, property_location_path(pl.id) %>
+        <%= link_to pl.name %>
       </p>
       <% end %>
   </nav>

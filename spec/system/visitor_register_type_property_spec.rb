@@ -31,6 +31,6 @@ describe "Visitor register type_register" do
     fill_in "Nome", with: "Casa"
     click_on "Enviar"
 
-    expect(page).to have_text("Tipo de Imóvel já existe")
+    expect(page).to have_text("Casa está cadastrado")
   end
 end

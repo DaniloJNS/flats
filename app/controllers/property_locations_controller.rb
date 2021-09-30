@@ -3,17 +3,14 @@ class PropertyLocationsController < ApplicationController
     @property_location = PropertyLocation.new
   end
   def create
-    # puts params
-
     @property_location = PropertyLocation.new(property_params)
 
-    
     if @property_location.save
       redirect_to root_path
     else
       render :new
-      redirect_to
     end
+
   end
 
   def show

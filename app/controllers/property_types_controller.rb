@@ -3,28 +3,18 @@ class PropertyTypesController < ApplicationController
     @property_type = PropertyType.new
   end
   def create
-
-    @property_type_params = params.require(:property_type).permit(:name)
-
-    PropertyType.all.each do |p|
-      if p[:name].eql? @property_type_params[:name]
-        flash.now[:error] = "Tipo de Imóvel já existe"
-        return render action: "falied"
-      end
-    end
-
-    @property_type = PropertyType.new(@property_type_params)
+    @property_type = PropertyType.new(property_type_params)
 
     if @property_type.save
       return redirect_to root_path
     else
-      flash.now[:error] = "Cadastro ínvalido"
-      return render action: "falied"
+      render :new
     end
   end
   def show
     @property_type = PropertyType.find(params[:id])
   end
-  def falied
+  def property_type_params
+     params.require(:property_type).permit(:name)
   end
 end

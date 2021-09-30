@@ -1,3 +1,11 @@
+<h1>Cadastro de Regiões</h1>
+<% if @property_location.errors.any? %>
+   <ul>
+      <% @property_location.errors.full_messages.each do |error| %>
+         <li><%= error %></li>
+      <% end %>
+   </ul>
+<% end %>
 <%= form_with model: @property_location do |p|%>
   <%= p.label :name, "Nome" %>
    <%= p.text_field :name %>

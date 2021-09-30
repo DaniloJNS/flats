@@ -7,7 +7,8 @@ class PropertiesController < ApplicationController
   end
   def create
     @property = Property.new(property_params)
-    if @property.save
+
+    if @property.save 
       redirect_to property_path(@property)
     else
       render :new

@@ -28,6 +28,7 @@ describe 'Visitor register property' do
     expect(page).to have_content("Estacionamento: Sim")
     expect(page).to have_content("Diária: R$ 200,00")
     expect(page).to have_content("Tipo: Casa")
+    expect(page).to have_content("Região: Florianópolis")
   end
 
   it 'and must fill all fields' do
