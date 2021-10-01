@@ -14,7 +14,7 @@ class PropertyLocationsController < ApplicationController
   end
 
   def show
-      @property_location = PropertyLocation.find_by(id: params[:id])
+      @property_location = PropertyLocation.find(params[:id])
   end
 
   private

@@ -1,7 +1,6 @@
 <header>
   <h1>Flats</h1>
-  <h3>Boas vindas ao sistema de locação de apartamentos</h3>
-<div>
+  <h2>Boas vindas ao sistema de locação de apartamentos</h3>
     <nav>
       <%= link_to 'Cadastrar Imóvel', new_property_path%>
     </nav>
@@ -11,28 +10,23 @@
     <nav>
       <%= link_to "Cadastrar Nova Localização", new_property_location_path %>
     </nav>
-  </div>
 </header>
 
 <aside>
-  <h2>Filtrar por tipo:</h2>
-  <nav>
+  <h2 class="filter">Filtrar por tipo:</h2>
     <% @property_types.each do |pt| %>
-      <p>
+      <nav>
         <%= link_to pt.name, property_type_path(pt.id) %>
-      </p>
+      </nav>
       <% end %>
-  </nav>
 </aside>
 <aside>
-  <h2>Filtrar por região:</h2>
-  <nav>
+  <h2 class="filter"> Filtrar por região:</h2>
     <% @property_locations.each do |pl| %>
-      <p>
-        <%= link_to pl.name %>
-      </p>
+      <nav>
+        <%= link_to pl.name, property_location_path(pl.id) %>
+      </nav>
       <% end %>
-  </nav>
 </aside>
 <section>
   <h2>Imoveis Disponíveis</h2>
@@ -40,9 +34,11 @@
     <div><span>Nenhum imóvel disponível</span></div>
   <% end %>
   <%@property.each do |p|%>
-    <%=content_tag :h3, link_to(p.title, property_path(p))%>
-    <%=content_tag :p, p.description%>
-    <%=content_tag :p, "Quartos: "+ p.rooms.to_s%>
+    <div>
+      <%=content_tag :h3, link_to(p.title, property_path(p))%>
+      <%=content_tag :p, p.description%>
+      <%=content_tag :p, "Quartos: "+ p.rooms.to_s%>
+    </div>
   <% end %>
 
   

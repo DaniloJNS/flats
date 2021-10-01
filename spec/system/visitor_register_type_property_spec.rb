@@ -19,7 +19,7 @@ describe "Visitor register type_register" do
     
     click_on "Enviar"
 
-    expect(page).to have_text("Cadastro ínvalido")
+    expect(page).to have_text("Nome não pode ficar em branco")
   end
 
   it 'with duplicate name' do
@@ -31,6 +31,6 @@ describe "Visitor register type_register" do
     fill_in "Nome", with: "Casa"
     click_on "Enviar"
 
-    expect(page).to have_text("Casa está cadastrado")
+    expect(page).to have_text("Casa está em uso")
   end
 end

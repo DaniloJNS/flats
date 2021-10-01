@@ -1,0 +1,14 @@
+
+<h1>Imóveis do tipo <%= property_list.name %></h1>
+
+<h2>Imóveis disponíveis</h2>
+  <% if property_list.properties.empty? %>
+    <div><span>Nenhum imóvel disponível</span></div>
+  <% end %>
+<% property_list.properties.each do |p| %>
+  <%=content_tag :h3, link_to(p.title, property_path(p))%>
+  <%=content_tag :p, p.description%>
+  <%=content_tag :p, "Quartos: "+ p.rooms.to_s%>
+<% end %>
+
+<%= content_tag :p, link_to("Voltar", root_path)%>

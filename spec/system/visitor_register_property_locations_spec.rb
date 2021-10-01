@@ -20,11 +20,11 @@ describe "Visitor register property_location" do
     fill_in "Nome", with: ""
     click_on "Enviar"
 
-    expect(page).to have_text("Cadastro ínvalido")
+    expect(page).to have_text("Nome não pode ficar em branco")
   end
 
   it 'with duplicate name' do
-    PropertyType.create(name:"Aracaju")
+    PropertyLocation.create(name:"Aracaju")
     
     visit root_path
     click_on "Cadastrar Nova Localização"
