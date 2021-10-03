@@ -1,45 +1,63 @@
-<header>
-  <h1>Flats</h1>
-  <h2>Boas vindas ao sistema de locação de apartamentos</h3>
-    <nav>
-      <%= link_to 'Cadastrar Imóvel', new_property_path%>
-    </nav>
-    <nav>
-      <%= link_to "Cadastrar Tipo de Imóvel", new_property_type_path %>
-    </nav>
-    <nav>
-      <%= link_to "Cadastrar Nova Localização", new_property_location_path %>
-    </nav>
-</header>
+<div class ="container-fluid">
 
-<aside>
-  <h2 class="filter">Filtrar por tipo:</h2>
-    <% @property_types.each do |pt| %>
-      <nav>
-        <%= link_to pt.name, property_type_path(pt.id) %>
+  <div class="row">
+    <header>
+    <h1 class="title">Flats</h1>
+    <h2 class="title">Boas vindas ao sistema de locação de apartamentos</h3>
+      <nav class="cadastro">
+        <%= link_to 'Cadastrar Imóvel', new_property_path%>
       </nav>
-      <% end %>
-</aside>
-<aside>
-  <h2 class="filter"> Filtrar por região:</h2>
-    <% @property_locations.each do |pl| %>
-      <nav>
-        <%= link_to pl.name, property_location_path(pl.id) %>
+      <nav class="cadastro">
+        <%= link_to "Cadastrar Tipo de Imóvel", new_property_type_path %>
       </nav>
-      <% end %>
-</aside>
-<section>
-  <h2>Imoveis Disponíveis</h2>
-  <% if @property.empty? %>
-    <div><span>Nenhum imóvel disponível</span></div>
-  <% end %>
-  <%@property.each do |p|%>
-    <div>
-      <%=content_tag :h3, link_to(p.title, property_path(p))%>
-      <%=content_tag :p, p.description%>
-      <%=content_tag :p, "Quartos: "+ p.rooms.to_s%>
+      <nav class="cadastro">
+        <%= link_to "Cadastrar Nova Localização", new_property_location_path %>
+      </nav>
+    </header>
+  </div>
+
+  <div class="row">
+
+     <aside class="link-filter">
+      <h2 class="filter">Tipos:</h2>
+        <% @property_types.each do |pt| %>
+          <nav class="link-nav">
+            <%= link_to pt.name, property_type_path(pt.id) %>
+          </nav>
+        <% end %>
+     </aside>
+
+       <aside class="link-filter">
+      <h2 class="filter"> Regiões:</h2>
+        <% @property_locations.each do |pl| %>
+          <nav class="link-nav">
+            <%= link_to pl.name, property_location_path(pl.id) %>
+          </nav>
+        <% end %>
+      </aside> 
+      
+  </div>
+  <div class="row">
+     <div class="col">
     </div>
-  <% end %>
-
+    <div class="col">
+       <section>
+        <h2>Imoveis Disponíveis</h2>
+        <% if @property.empty? %>
+          <div><span>Nenhum imóvel disponível</span></div>
+        <% end %>
+        <%@property.each do |p|%>
+          <div id="property-description">
+            <%=content_tag :h3, link_to(p.title, property_path(p))%>
+            <%=content_tag :p, p.description%>
+            <%=content_tag :p, "Quartos: "+ p.rooms.to_s%>
+          </div>
+        <% end %>
+      </section>
+    </div>
+   
+    <div class="col">
+    </div>  
+  </div>
   
-</section>
+</div>

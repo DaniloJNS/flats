@@ -6,3 +6,12 @@ pt-BR:
     attributes:
       property:
         title: "Título"
+        description: "Descrição"
+        rooms: "Quartos"
+        bathrooms: "Banheiros"
+        parking_slot: "Vagas de estacionamento"
+        pets: "Animais de estimação"
+        daily_rate: "Diária"
+  properties:
+    new:
+      title: "Cadastro de imoveis"
